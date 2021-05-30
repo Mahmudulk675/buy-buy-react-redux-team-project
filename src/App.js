@@ -1,19 +1,35 @@
-
-import './App.css';
+import React from 'react';
+import Contacts from './Components/contacts/Contacts';
+import Navbar from './Components/elements/Navbar';
+import './styles/App.scss';
+import { provider } from 'react-redux'
+import store from './store'
+import { Provider } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import AddContact from "./components/contacts/AddContact";
 
 function App() {
   return (
-    <div className="App">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora fugiat debitis enim! Dolor fugiat ex natus, quisquam, incidunt mollitia reprehenderit qui aspernatur nulla sit quasi cum earum facere autem impedit quo corrupti consequuntur maxime blanditiis. Quam repellendus, aut aliquid debitis eveniet nemo tenetur quod magnam recusandae incidunt. Cum, quia quidem.
-      </p>
-      <p>Sohel test peragraph</p>
-      <h1>Uchchash</h1>
-      <h1>Uchchash</h1>
-      <h1>Uchchash</h1>
-      <h1>Uchchash</h1>
-     
-    </div>
+    <Provider store={store}>
+      <Router>
+        <div className="App">
+          <Navbar />
+          <div className="container">
+            <div className="py-3">
+              <Switch>
+                <Route exact path="/" component={Contacts} />
+                <Route exact path="/contact/add" component={AddContact} />
+              </Switch>
+            </div>
+          </div>
+        </div>
+      </Router>
+    </Provider>
   );
 }
 
