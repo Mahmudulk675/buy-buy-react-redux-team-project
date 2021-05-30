@@ -1,0 +1,19 @@
+
+
+$theme-colors: (
+  "primary": #6200ea,
+  "success": #33691e,
+  "danger": #f50057,
+  "warning": #ffab00,
+);
+
+@import "~bootstrap/scss/bootstrap";
+
+// *{
+//   margin:0;
+//   padding:0;
+// }
+
+body{
+  padding-top: 5rem;
+}
